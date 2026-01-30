@@ -5,11 +5,12 @@ def get_book_text(path_to_file):
 
 
 from stats import num_words
-
+from stats import word_and_count
 def main():
     path = "/Users/nathankovac/python Learning/Bookbot/books/frankenstien.txt"
     file_contents = get_book_text(path)
     amount = num_words(file_contents)
+    print(word_and_count(file_contents))
     return print(f"{amount} words in the text")
 
 
