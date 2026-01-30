@@ -6,9 +6,11 @@ def word_and_count(file_contents):
     wc = dict()
     my_list =file_contents.split()
     for word in my_list:
-        if word in wc:
-            wc[word] = wc.get(word) + 1
-        else:
-            wc.update({word : 1})
-    print(wc)
+        for char in word:
+            if char in wc:
+                wc[char] = wc.get(char) + 1
+            else:
+                wc.update({char : 1})
+    sortedDIC = list(sorted(wc.items(), key=lambda item: item[1], reverse=True))
+    return(sortedDIC)
     
